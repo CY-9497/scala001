@@ -1,14 +1,15 @@
 package com.ch.visualization
 
-import breeze.linalg.DenseVector
+import breeze.linalg.{DenseVector, linspace, DenseMatrix => BDM}
 import breeze.plot._
+import org.apache.commons.collections.IteratorUtils
 import org.apache.spark.{SparkConf, SparkContext}
 
 import java.io.File
 import scala.collection.mutable.ArrayBuffer
+import scala.io.Source
 
 /**
- * 数据分析结果可视化
  * @author 渔郎
  * @Date 2022/5/17 10:46
  */
