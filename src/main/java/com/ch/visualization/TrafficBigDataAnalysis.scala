@@ -22,6 +22,8 @@ object TrafficBigDataAnalysis {
         line.split("\u0001")
       })
       rdd.foreach(println)
+
+
     }
     sc.stop()
   }
