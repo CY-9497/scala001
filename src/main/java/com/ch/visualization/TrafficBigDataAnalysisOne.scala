@@ -11,7 +11,7 @@ import java.io.File
 object TrafficBigDataAnalysisOne {
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf()
-    conf.setMaster("local").setAppName("TrafficBigDataAnalysisOne")
+    conf.setMaster("local[4]").setAppName("TrafficBigDataAnalysisOne")
     val sc = new SparkContext(conf)
     val dirFile = new File("D:\\BaiduNetdiskDownload\\数据\\数据") //定义一个目标文件夹对象
     val files = dirFile.listFiles //定义一个数组，文件夹中的每个文件作为数组的元素
@@ -100,7 +100,9 @@ object TrafficBigDataAnalysisOne {
 
       val result = R_sum.join(R_rdd2.join(R_rdd4))
 
-      result.foreach(println)
+      result.count()
+//      保存结果
+//      result.saveAsTextFile("./result/" + name)
 
 
     }
