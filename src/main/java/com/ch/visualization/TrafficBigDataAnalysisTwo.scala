@@ -93,9 +93,10 @@ object TrafficBigDataAnalysisTwo {
 //        }
 //      })
 //    })
-
     // 打印结果
     list.foreach(println)
+
+    // 保存异常设备的id异常时间和当日记录数
     sc.parallelize(list).saveAsTextFile("./result/TrafficBigDataAnalysisTwo")
 
     sc.stop()
